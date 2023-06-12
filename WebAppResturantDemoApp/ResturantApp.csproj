@@ -1,0 +1,656 @@
+﻿<Project ToolsVersion="15.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="..\packages\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.2.0.1\build\net46\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.props" Condition="Exists('..\packages\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.2.0.1\build\net46\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.props')" />
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProductVersion>
+    </ProductVersion>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>{9912C2DE-E1FB-45BC-832C-D13EC113D95F}</ProjectGuid>
+    <ProjectTypeGuids>{349c5851-65df-11da-9384-00065b846f21};{fae04ec0-301f-11d3-bf4b-00c04f79efbc}</ProjectTypeGuids>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>WebAppResturantDemoApp</RootNamespace>
+    <AssemblyName>WebAppResturantDemoApp</AssemblyName>
+    <TargetFrameworkVersion>v4.8</TargetFrameworkVersion>
+    <UseIISExpress>true</UseIISExpress>
+    <Use64BitIISExpress />
+    <IISExpressSSLPort>44308</IISExpressSSLPort>
+    <IISExpressAnonymousAuthentication />
+    <IISExpressWindowsAuthentication />
+    <IISExpressUseClassicPipelineMode />
+    <UseGlobalApplicationHostFile />
+    <NuGetPackageImportStamp>
+    </NuGetPackageImportStamp>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="EntityFramework, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
+      <HintPath>..\packages\EntityFramework.6.2.0\lib\net45\EntityFramework.dll</HintPath>
+    </Reference>
+    <Reference Include="EntityFramework.SqlServer, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
+      <HintPath>..\packages\EntityFramework.6.2.0\lib\net45\EntityFramework.SqlServer.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Runtime.Serialization" />
+    <Reference Include="System.Security" />
+    <Reference Include="System.Web.DynamicData" />
+    <Reference Include="System.Web.Entity" />
+    <Reference Include="System.Web.ApplicationServices" />
+    <Reference Include="System.ComponentModel.DataAnnotations" />
+    <Reference Include="System" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="System.Web.Extensions" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Web" />
+    <Reference Include="System.Xml" />
+    <Reference Include="System.Configuration" />
+    <Reference Include="System.Web.Services" />
+    <Reference Include="System.EnterpriseServices" />
+  </ItemGroup>
+  <ItemGroup>
+    <Reference Include="System.Web.Razor">
+      <HintPath>..\packages\Microsoft.AspNet.Razor.3.2.9\lib\net45\System.Web.Razor.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.Webpages">
+      <HintPath>..\packages\Microsoft.AspNet.Webpages.3.2.9\lib\net45\System.Web.Webpages.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.Webpages.Deployment">
+      <HintPath>..\packages\Microsoft.AspNet.Webpages.3.2.9\lib\net45\System.Web.Webpages.Deployment.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.Webpages.Razor">
+      <HintPath>..\packages\Microsoft.AspNet.Webpages.3.2.9\lib\net45\System.Web.Webpages.Razor.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.Helpers">
+      <HintPath>..\packages\Microsoft.AspNet.Webpages.3.2.9\lib\net45\System.Web.Helpers.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Web.Infrastructure">
+      <HintPath>..\packages\Microsoft.Web.Infrastructure.2.0.1\lib\net40\Microsoft.Web.Infrastructure.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.Mvc">
+      <HintPath>..\packages\Microsoft.AspNet.Mvc.5.2.9\lib\net45\System.Web.Mvc.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.CodeDom.Providers.DotNetCompilerPlatform">
+      <HintPath>..\packages\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.2.0.1\lib\net45\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.dll</HintPath>
+    </Reference>
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Content\bootstrap\css\bootstrap-grid.css" />
+    <Content Include="Content\bootstrap\css\bootstrap-grid.min.css" />
+    <Content Include="Content\bootstrap\css\bootstrap-grid.rtl.css" />
+    <Content Include="Content\bootstrap\css\bootstrap-grid.rtl.min.css" />
+    <Content Include="Content\bootstrap\css\bootstrap-reboot.css" />
+    <Content Include="Content\bootstrap\css\bootstrap-reboot.min.css" />
+    <Content Include="Content\bootstrap\css\bootstrap-reboot.rtl.css" />
+    <Content Include="Content\bootstrap\css\bootstrap-reboot.rtl.min.css" />
+    <Content Include="Content\bootstrap\css\bootstrap-utilities.css" />
+    <Content Include="Content\bootstrap\css\bootstrap-utilities.min.css" />
+    <Content Include="Content\bootstrap\css\bootstrap-utilities.rtl.css" />
+    <Content Include="Content\bootstrap\css\bootstrap-utilities.rtl.min.css" />
+    <Content Include="Content\bootstrap\css\bootstrap.css" />
+    <Content Include="Content\bootstrap\css\bootstrap.min.css" />
+    <Content Include="Content\bootstrap\css\bootstrap.rtl.css" />
+    <Content Include="Content\bootstrap\css\bootstrap.rtl.min.css" />
+    <Content Include="Content\bootstrap\js\bootstrap.bundle.js" />
+    <Content Include="Content\bootstrap\js\bootstrap.bundle.min.js" />
+    <Content Include="Content\bootstrap\js\bootstrap.esm.js" />
+    <Content Include="Content\bootstrap\js\bootstrap.esm.min.js" />
+    <Content Include="Content\bootstrap\js\bootstrap.js" />
+    <Content Include="Content\bootstrap\js\bootstrap.min.js" />
+    <Content Include="Content\jquery\jquery.js" />
+    <Content Include="Content\jquery\jquery.min.js" />
+    <Content Include="Content\jquery\jquery.slim.js" />
+    <Content Include="Content\jquery\jquery.slim.min.js" />
+    <Content Include="Content\Site.css" />
+    <Content Include="Global.asax" />
+    <Content Include="Models\ResturantDbModel.Context.tt">
+      <Generator>TextTemplatingFileGenerator</Generator>
+      <DependentUpon>ResturantDbModel.edmx</DependentUpon>
+      <LastGenOutput>ResturantDbModel.Context.cs</LastGenOutput>
+    </Content>
+    <Content Include="Models\ResturantDbModel.tt">
+      <Generator>TextTemplatingFileGenerator</Generator>
+      <DependentUpon>ResturantDbModel.edmx</DependentUpon>
+      <LastGenOutput>ResturantDbModel.cs</LastGenOutput>
+    </Content>
+    <Content Include="Scripts\popper.js\cjs\enums.js" />
+    <Content Include="Scripts\popper.js\cjs\enums.min.js" />
+    <Content Include="Scripts\popper.js\cjs\popper-base.js" />
+    <Content Include="Scripts\popper.js\cjs\popper-base.min.js" />
+    <Content Include="Scripts\popper.js\cjs\popper-lite.js" />
+    <Content Include="Scripts\popper.js\cjs\popper-lite.min.js" />
+    <Content Include="Scripts\popper.js\cjs\popper.js" />
+    <Content Include="Scripts\popper.js\cjs\popper.min.js" />
+    <Content Include="Scripts\popper.js\esm\createPopper.js" />
+    <Content Include="Scripts\popper.js\esm\createPopper.min.js" />
+    <Content Include="Scripts\popper.js\esm\dom-utils\contains.js" />
+    <Content Include="Scripts\popper.js\esm\dom-utils\contains.min.js" />
+    <Content Include="Scripts\popper.js\esm\dom-utils\getBoundingClientRect.js" />
+    <Content Include="Scripts\popper.js\esm\dom-utils\getBoundingClientRect.min.js" />
+    <Content Include="Scripts\popper.js\esm\dom-utils\getClippingRect.js" />
+    <Content Include="Scripts\popper.js\esm\dom-utils\getClippingRect.min.js" />
+    <Content Include="Scripts\popper.js\esm\dom-utils\getCompositeRect.js" />
+    <Content Include="Scripts\popper.js\esm\dom-utils\getCompositeRect.min.js" />
+    <Content Include="Scripts\popper.js\esm\dom-utils\getComputedStyle.js" />
+    <Content Include="Scripts\popper.js\esm\dom-utils\getComputedStyle.min.js" />
+    <Content Include="Scripts\popper.js\esm\dom-utils\getDocumentElement.js" />
+    <Content Include="Scripts\popper.js\esm\dom-utils\getDocumentElement.min.js" />
+    <Content Include="Scripts\popper.js\esm\dom-utils\getDocumentRect.js" />
+    <Content Include="Scripts\popper.js\esm\dom-utils\getDocumentRect.min.js" />
+    <Content Include="Scripts\popper.js\esm\dom-utils\getHTMLElementScroll.js" />
+    <Content Include="Scripts\popper.js\esm\dom-utils\getHTMLElementScroll.min.js" />
+    <Content Include="Scripts\popper.js\esm\dom-utils\getLayoutRect.js" />
+    <Content Include="Scripts\popper.js\esm\dom-utils\getLayoutRect.min.js" />
+    <Content Include="Scripts\popper.js\esm\dom-utils\getNodeName.js" />
+    <Content Include="Scripts\popper.js\esm\dom-utils\getNodeName.min.js" />
+    <Content Include="Scripts\popper.js\esm\dom-utils\getNodeScroll.js" />
+    <Content Include="Scripts\popper.js\esm\dom-utils\getNodeScroll.min.js" />
+    <Content Include="Scripts\popper.js\esm\dom-utils\getOffsetParent.js" />
+    <Content Include="Scripts\popper.js\esm\dom-utils\getOffsetParent.min.js" />
+    <Content Include="Scripts\popper.js\esm\dom-utils\getParentNode.js" />
+    <Content Include="Scripts\popper.js\esm\dom-utils\getParentNode.min.js" />
+    <Content Include="Scripts\popper.js\esm\dom-utils\getScrollParent.js" />
+    <Content Include="Scripts\popper.js\esm\dom-utils\getScrollParent.min.js" />
+    <Content Include="Scripts\popper.js\esm\dom-utils\getViewportRect.js" />
+    <Content Include="Scripts\popper.js\esm\dom-utils\getViewportRect.min.js" />
+    <Content Include="Scripts\popper.js\esm\dom-utils\getWindow.js" />
+    <Content Include="Scripts\popper.js\esm\dom-utils\getWindow.min.js" />
+    <Content Include="Scripts\popper.js\esm\dom-utils\getWindowScroll.js" />
+    <Content Include="Scripts\popper.js\esm\dom-utils\getWindowScroll.min.js" />
+    <Content Include="Scripts\popper.js\esm\dom-utils\getWindowScrollBarX.js" />
+    <Content Include="Scripts\popper.js\esm\dom-utils\getWindowScrollBarX.min.js" />
+    <Content Include="Scripts\popper.js\esm\dom-utils\instanceOf.js" />
+    <Content Include="Scripts\popper.js\esm\dom-utils\instanceOf.min.js" />
+    <Content Include="Scripts\popper.js\esm\dom-utils\isLayoutViewport.js" />
+    <Content Include="Scripts\popper.js\esm\dom-utils\isLayoutViewport.min.js" />
+    <Content Include="Scripts\popper.js\esm\dom-utils\isScrollParent.js" />
+    <Content Include="Scripts\popper.js\esm\dom-utils\isScrollParent.min.js" />
+    <Content Include="Scripts\popper.js\esm\dom-utils\isTableElement.js" />
+    <Content Include="Scripts\popper.js\esm\dom-utils\isTableElement.min.js" />
+    <Content Include="Scripts\popper.js\esm\dom-utils\listScrollParents.js" />
+    <Content Include="Scripts\popper.js\esm\dom-utils\listScrollParents.min.js" />
+    <Content Include="Scripts\popper.js\esm\enums.js" />
+    <Content Include="Scripts\popper.js\esm\enums.min.js" />
+    <Content Include="Scripts\popper.js\esm\index.js" />
+    <Content Include="Scripts\popper.js\esm\index.min.js" />
+    <Content Include="Scripts\popper.js\esm\modifiers\applyStyles.js" />
+    <Content Include="Scripts\popper.js\esm\modifiers\applyStyles.min.js" />
+    <Content Include="Scripts\popper.js\esm\modifiers\arrow.js" />
+    <Content Include="Scripts\popper.js\esm\modifiers\arrow.min.js" />
+    <Content Include="Scripts\popper.js\esm\modifiers\computeStyles.js" />
+    <Content Include="Scripts\popper.js\esm\modifiers\computeStyles.min.js" />
+    <Content Include="Scripts\popper.js\esm\modifiers\eventListeners.js" />
+    <Content Include="Scripts\popper.js\esm\modifiers\eventListeners.min.js" />
+    <Content Include="Scripts\popper.js\esm\modifiers\flip.js" />
+    <Content Include="Scripts\popper.js\esm\modifiers\flip.min.js" />
+    <Content Include="Scripts\popper.js\esm\modifiers\hide.js" />
+    <Content Include="Scripts\popper.js\esm\modifiers\hide.min.js" />
+    <Content Include="Scripts\popper.js\esm\modifiers\index.js" />
+    <Content Include="Scripts\popper.js\esm\modifiers\index.min.js" />
+    <Content Include="Scripts\popper.js\esm\modifiers\offset.js" />
+    <Content Include="Scripts\popper.js\esm\modifiers\offset.min.js" />
+    <Content Include="Scripts\popper.js\esm\modifiers\popperOffsets.js" />
+    <Content Include="Scripts\popper.js\esm\modifiers\popperOffsets.min.js" />
+    <Content Include="Scripts\popper.js\esm\modifiers\preventOverflow.js" />
+    <Content Include="Scripts\popper.js\esm\modifiers\preventOverflow.min.js" />
+    <Content Include="Scripts\popper.js\esm\popper-base.js" />
+    <Content Include="Scripts\popper.js\esm\popper-base.min.js" />
+    <Content Include="Scripts\popper.js\esm\popper-lite.js" />
+    <Content Include="Scripts\popper.js\esm\popper-lite.min.js" />
+    <Content Include="Scripts\popper.js\esm\popper.js" />
+    <Content Include="Scripts\popper.js\esm\popper.min.js" />
+    <Content Include="Scripts\popper.js\esm\types.js" />
+    <Content Include="Scripts\popper.js\esm\types.min.js" />
+    <Content Include="Scripts\popper.js\esm\utils\computeAutoPlacement.js" />
+    <Content Include="Scripts\popper.js\esm\utils\computeAutoPlacement.min.js" />
+    <Content Include="Scripts\popper.js\esm\utils\computeOffsets.js" />
+    <Content Include="Scripts\popper.js\esm\utils\computeOffsets.min.js" />
+    <Content Include="Scripts\popper.js\esm\utils\debounce.js" />
+    <Content Include="Scripts\popper.js\esm\utils\debounce.min.js" />
+    <Content Include="Scripts\popper.js\esm\utils\detectOverflow.js" />
+    <Content Include="Scripts\popper.js\esm\utils\detectOverflow.min.js" />
+    <Content Include="Scripts\popper.js\esm\utils\expandToHashMap.js" />
+    <Content Include="Scripts\popper.js\esm\utils\expandToHashMap.min.js" />
+    <Content Include="Scripts\popper.js\esm\utils\getAltAxis.js" />
+    <Content Include="Scripts\popper.js\esm\utils\getAltAxis.min.js" />
+    <Content Include="Scripts\popper.js\esm\utils\getAltLen.js" />
+    <Content Include="Scripts\popper.js\esm\utils\getAltLen.min.js" />
+    <Content Include="Scripts\popper.js\esm\utils\getBasePlacement.js" />
+    <Content Include="Scripts\popper.js\esm\utils\getBasePlacement.min.js" />
+    <Content Include="Scripts\popper.js\esm\utils\getFreshSideObject.js" />
+    <Content Include="Scripts\popper.js\esm\utils\getFreshSideObject.min.js" />
+    <Content Include="Scripts\popper.js\esm\utils\getMainAxisFromPlacement.js" />
+    <Content Include="Scripts\popper.js\esm\utils\getMainAxisFromPlacement.min.js" />
+    <Content Include="Scripts\popper.js\esm\utils\getOppositePlacement.js" />
+    <Content Include="Scripts\popper.js\esm\utils\getOppositePlacement.min.js" />
+    <Content Include="Scripts\popper.js\esm\utils\getOppositeVariationPlacement.js" />
+    <Content Include="Scripts\popper.js\esm\utils\getOppositeVariationPlacement.min.js" />
+    <Content Include="Scripts\popper.js\esm\utils\getVariation.js" />
+    <Content Include="Scripts\popper.js\esm\utils\getVariation.min.js" />
+    <Content Include="Scripts\popper.js\esm\utils\math.js" />
+    <Content Include="Scripts\popper.js\esm\utils\math.min.js" />
+    <Content Include="Scripts\popper.js\esm\utils\mergeByName.js" />
+    <Content Include="Scripts\popper.js\esm\utils\mergeByName.min.js" />
+    <Content Include="Scripts\popper.js\esm\utils\mergePaddingObject.js" />
+    <Content Include="Scripts\popper.js\esm\utils\mergePaddingObject.min.js" />
+    <Content Include="Scripts\popper.js\esm\utils\orderModifiers.js" />
+    <Content Include="Scripts\popper.js\esm\utils\orderModifiers.min.js" />
+    <Content Include="Scripts\popper.js\esm\utils\rectToClientRect.js" />
+    <Content Include="Scripts\popper.js\esm\utils\rectToClientRect.min.js" />
+    <Content Include="Scripts\popper.js\esm\utils\uniqueBy.js" />
+    <Content Include="Scripts\popper.js\esm\utils\uniqueBy.min.js" />
+    <Content Include="Scripts\popper.js\esm\utils\userAgent.js" />
+    <Content Include="Scripts\popper.js\esm\utils\userAgent.min.js" />
+    <Content Include="Scripts\popper.js\esm\utils\within.js" />
+    <Content Include="Scripts\popper.js\esm\utils\within.min.js" />
+    <Content Include="Scripts\popper.js\umd\enums.js" />
+    <Content Include="Scripts\popper.js\umd\enums.min.js" />
+    <Content Include="Scripts\popper.js\umd\popper-base.js" />
+    <Content Include="Scripts\popper.js\umd\popper-base.min.js" />
+    <Content Include="Scripts\popper.js\umd\popper-lite.js" />
+    <Content Include="Scripts\popper.js\umd\popper-lite.min.js" />
+    <Content Include="Scripts\popper.js\umd\popper.js" />
+    <Content Include="Scripts\popper.js\umd\popper.min.js" />
+    <Content Include="Scripts\twitter-bootstrap\css\bootstrap-grid.css" />
+    <Content Include="Scripts\twitter-bootstrap\css\bootstrap-grid.min.css" />
+    <Content Include="Scripts\twitter-bootstrap\css\bootstrap-grid.rtl.css" />
+    <Content Include="Scripts\twitter-bootstrap\css\bootstrap-grid.rtl.min.css" />
+    <Content Include="Scripts\twitter-bootstrap\css\bootstrap-reboot.css" />
+    <Content Include="Scripts\twitter-bootstrap\css\bootstrap-reboot.min.css" />
+    <Content Include="Scripts\twitter-bootstrap\css\bootstrap-reboot.rtl.css" />
+    <Content Include="Scripts\twitter-bootstrap\css\bootstrap-reboot.rtl.min.css" />
+    <Content Include="Scripts\twitter-bootstrap\css\bootstrap-utilities.css" />
+    <Content Include="Scripts\twitter-bootstrap\css\bootstrap-utilities.min.css" />
+    <Content Include="Scripts\twitter-bootstrap\css\bootstrap-utilities.rtl.css" />
+    <Content Include="Scripts\twitter-bootstrap\css\bootstrap-utilities.rtl.min.css" />
+    <Content Include="Scripts\twitter-bootstrap\css\bootstrap.css" />
+    <Content Include="Scripts\twitter-bootstrap\css\bootstrap.min.css" />
+    <Content Include="Scripts\twitter-bootstrap\css\bootstrap.rtl.css" />
+    <Content Include="Scripts\twitter-bootstrap\css\bootstrap.rtl.min.css" />
+    <Content Include="Scripts\twitter-bootstrap\js\bootstrap.bundle.js" />
+    <Content Include="Scripts\twitter-bootstrap\js\bootstrap.bundle.min.js" />
+    <Content Include="Scripts\twitter-bootstrap\js\bootstrap.esm.js" />
+    <Content Include="Scripts\twitter-bootstrap\js\bootstrap.esm.min.js" />
+    <Content Include="Scripts\twitter-bootstrap\js\bootstrap.js" />
+    <Content Include="Scripts\twitter-bootstrap\js\bootstrap.min.js" />
+    <Content Include="Web.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="App_Start\RouteConfig.cs" />
+    <Compile Include="Controllers\HomeController.cs" />
+    <Compile Include="Global.asax.cs">
+      <DependentUpon>Global.asax</DependentUpon>
+    </Compile>
+    <Compile Include="Models\Customer.cs">
+      <DependentUpon>ResturantDbModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\Item.cs">
+      <DependentUpon>ResturantDbModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\Order.cs">
+      <DependentUpon>ResturantDbModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\Orderdeatil.cs">
+      <DependentUpon>ResturantDbModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\PaymentType.cs">
+      <DependentUpon>ResturantDbModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\ResturantDbModel.Context.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>ResturantDbModel.Context.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\ResturantDbModel.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>ResturantDbModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\ResturantDbModel.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>ResturantDbModel.edmx</DependentUpon>
+    </Compile>
+    <Compile Include="Models\Transaction.cs">
+      <DependentUpon>ResturantDbModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Repositories\CustomerRepository.cs" />
+    <Compile Include="Repositories\ItemRepository.cs" />
+    <Compile Include="Repositories\OrderRepository.cs" />
+    <Compile Include="Repositories\PaymentTypeRepository.cs" />
+    <Compile Include="ViewModel\CustomerViewModel.cs" />
+    <Compile Include="ViewModel\ItemViewModel.cs" />
+    <Compile Include="ViewModel\OrderDetailViewModel.cs" />
+    <Compile Include="ViewModel\OrderViewModel.cs" />
+    <Compile Include="ViewModel\PayemtTypeViewModel.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Views\web.config" />
+    <Content Include="libman.json" />
+    <Content Include="Content\jquery\jquery.min.map" />
+    <Content Include="Content\jquery\jquery.slim.min.map" />
+    <Content Include="Content\bootstrap\css\bootstrap-grid.css.map" />
+    <Content Include="Content\bootstrap\css\bootstrap-grid.min.css.map" />
+    <Content Include="Content\bootstrap\css\bootstrap-grid.rtl.css.map" />
+    <Content Include="Content\bootstrap\css\bootstrap-grid.rtl.min.css.map" />
+    <Content Include="Content\bootstrap\css\bootstrap-reboot.css.map" />
+    <Content Include="Content\bootstrap\css\bootstrap-reboot.min.css.map" />
+    <Content Include="Content\bootstrap\css\bootstrap-reboot.rtl.css.map" />
+    <Content Include="Content\bootstrap\css\bootstrap-reboot.rtl.min.css.map" />
+    <Content Include="Content\bootstrap\css\bootstrap-utilities.css.map" />
+    <Content Include="Content\bootstrap\css\bootstrap-utilities.min.css.map" />
+    <Content Include="Content\bootstrap\css\bootstrap-utilities.rtl.css.map" />
+    <Content Include="Content\bootstrap\css\bootstrap-utilities.rtl.min.css.map" />
+    <Content Include="Content\bootstrap\css\bootstrap.css.map" />
+    <Content Include="Content\bootstrap\css\bootstrap.min.css.map" />
+    <Content Include="Content\bootstrap\css\bootstrap.rtl.css.map" />
+    <Content Include="Content\bootstrap\css\bootstrap.rtl.min.css.map" />
+    <Content Include="Content\bootstrap\js\bootstrap.bundle.js.map" />
+    <Content Include="Content\bootstrap\js\bootstrap.bundle.min.js.map" />
+    <Content Include="Content\bootstrap\js\bootstrap.esm.js.map" />
+    <Content Include="Content\bootstrap\js\bootstrap.esm.min.js.map" />
+    <Content Include="Content\bootstrap\js\bootstrap.js.map" />
+    <Content Include="Content\bootstrap\js\bootstrap.min.js.map" />
+    <Content Include="Content\bootstrap\scss\_accordion.scss" />
+    <Content Include="Content\bootstrap\scss\_alert.scss" />
+    <Content Include="Content\bootstrap\scss\_badge.scss" />
+    <Content Include="Content\bootstrap\scss\_breadcrumb.scss" />
+    <Content Include="Content\bootstrap\scss\_button-group.scss" />
+    <Content Include="Content\bootstrap\scss\_buttons.scss" />
+    <Content Include="Content\bootstrap\scss\_card.scss" />
+    <Content Include="Content\bootstrap\scss\_carousel.scss" />
+    <Content Include="Content\bootstrap\scss\_close.scss" />
+    <Content Include="Content\bootstrap\scss\_containers.scss" />
+    <Content Include="Content\bootstrap\scss\_dropdown.scss" />
+    <Content Include="Content\bootstrap\scss\_forms.scss" />
+    <Content Include="Content\bootstrap\scss\_functions.scss" />
+    <Content Include="Content\bootstrap\scss\_grid.scss" />
+    <Content Include="Content\bootstrap\scss\_helpers.scss" />
+    <Content Include="Content\bootstrap\scss\_images.scss" />
+    <Content Include="Content\bootstrap\scss\_list-group.scss" />
+    <Content Include="Content\bootstrap\scss\_maps.scss" />
+    <Content Include="Content\bootstrap\scss\_mixins.scss" />
+    <Content Include="Content\bootstrap\scss\_modal.scss" />
+    <Content Include="Content\bootstrap\scss\_nav.scss" />
+    <Content Include="Content\bootstrap\scss\_navbar.scss" />
+    <Content Include="Content\bootstrap\scss\_offcanvas.scss" />
+    <Content Include="Content\bootstrap\scss\_pagination.scss" />
+    <Content Include="Content\bootstrap\scss\_placeholders.scss" />
+    <Content Include="Content\bootstrap\scss\_popover.scss" />
+    <Content Include="Content\bootstrap\scss\_progress.scss" />
+    <Content Include="Content\bootstrap\scss\_reboot.scss" />
+    <Content Include="Content\bootstrap\scss\_root.scss" />
+    <Content Include="Content\bootstrap\scss\_spinners.scss" />
+    <Content Include="Content\bootstrap\scss\bootstrap-grid.scss" />
+    <Content Include="Content\bootstrap\scss\bootstrap-reboot.scss" />
+    <Content Include="Content\bootstrap\scss\_tables.scss" />
+    <Content Include="Content\bootstrap\scss\_toasts.scss" />
+    <Content Include="Content\bootstrap\scss\_tooltip.scss" />
+    <Content Include="Content\bootstrap\scss\_transitions.scss" />
+    <Content Include="Content\bootstrap\scss\_type.scss" />
+    <Content Include="Content\bootstrap\scss\_utilities.scss" />
+    <Content Include="Content\bootstrap\scss\_variables-dark.scss" />
+    <Content Include="Content\bootstrap\scss\_variables.scss" />
+    <Content Include="Content\bootstrap\scss\bootstrap-utilities.scss" />
+    <Content Include="Content\bootstrap\scss\bootstrap.scss" />
+    <Content Include="Content\bootstrap\scss\forms\_floating-labels.scss" />
+    <Content Include="Content\bootstrap\scss\forms\_form-check.scss" />
+    <Content Include="Content\bootstrap\scss\forms\_form-control.scss" />
+    <Content Include="Content\bootstrap\scss\forms\_form-range.scss" />
+    <Content Include="Content\bootstrap\scss\forms\_form-select.scss" />
+    <Content Include="Content\bootstrap\scss\forms\_form-text.scss" />
+    <Content Include="Content\bootstrap\scss\forms\_input-group.scss" />
+    <Content Include="Content\bootstrap\scss\forms\_labels.scss" />
+    <Content Include="Content\bootstrap\scss\forms\_validation.scss" />
+    <Content Include="Content\bootstrap\scss\helpers\_clearfix.scss" />
+    <Content Include="Content\bootstrap\scss\helpers\_color-bg.scss" />
+    <Content Include="Content\bootstrap\scss\helpers\_colored-links.scss" />
+    <Content Include="Content\bootstrap\scss\helpers\_focus-ring.scss" />
+    <Content Include="Content\bootstrap\scss\helpers\_icon-link.scss" />
+    <Content Include="Content\bootstrap\scss\helpers\_position.scss" />
+    <Content Include="Content\bootstrap\scss\helpers\_ratio.scss" />
+    <Content Include="Content\bootstrap\scss\helpers\_stacks.scss" />
+    <Content Include="Content\bootstrap\scss\helpers\_stretched-link.scss" />
+    <Content Include="Content\bootstrap\scss\helpers\_text-truncation.scss" />
+    <Content Include="Content\bootstrap\scss\helpers\_visually-hidden.scss" />
+    <Content Include="Content\bootstrap\scss\helpers\_vr.scss" />
+    <Content Include="Content\bootstrap\scss\mixins\_alert.scss" />
+    <Content Include="Content\bootstrap\scss\mixins\_backdrop.scss" />
+    <Content Include="Content\bootstrap\scss\mixins\_banner.scss" />
+    <Content Include="Content\bootstrap\scss\mixins\_border-radius.scss" />
+    <Content Include="Content\bootstrap\scss\mixins\_box-shadow.scss" />
+    <Content Include="Content\bootstrap\scss\mixins\_breakpoints.scss" />
+    <Content Include="Content\bootstrap\scss\mixins\_buttons.scss" />
+    <Content Include="Content\bootstrap\scss\mixins\_caret.scss" />
+    <Content Include="Content\bootstrap\scss\mixins\_clearfix.scss" />
+    <Content Include="Content\bootstrap\scss\mixins\_color-mode.scss" />
+    <Content Include="Content\bootstrap\scss\mixins\_color-scheme.scss" />
+    <Content Include="Content\bootstrap\scss\mixins\_container.scss" />
+    <Content Include="Content\bootstrap\scss\mixins\_deprecate.scss" />
+    <Content Include="Content\bootstrap\scss\mixins\_forms.scss" />
+    <Content Include="Content\bootstrap\scss\mixins\_gradients.scss" />
+    <Content Include="Content\bootstrap\scss\mixins\_grid.scss" />
+    <Content Include="Content\bootstrap\scss\mixins\_image.scss" />
+    <Content Include="Content\bootstrap\scss\mixins\_list-group.scss" />
+    <Content Include="Content\bootstrap\scss\mixins\_lists.scss" />
+    <Content Include="Content\bootstrap\scss\mixins\_pagination.scss" />
+    <Content Include="Content\bootstrap\scss\mixins\_reset-text.scss" />
+    <Content Include="Content\bootstrap\scss\mixins\_resize.scss" />
+    <Content Include="Content\bootstrap\scss\mixins\_table-variants.scss" />
+    <Content Include="Content\bootstrap\scss\mixins\_text-truncate.scss" />
+    <Content Include="Content\bootstrap\scss\mixins\_transition.scss" />
+    <Content Include="Content\bootstrap\scss\mixins\_utilities.scss" />
+    <Content Include="Content\bootstrap\scss\mixins\_visually-hidden.scss" />
+    <Content Include="Content\bootstrap\scss\utilities\_api.scss" />
+    <Content Include="Content\bootstrap\scss\vendor\_rfs.scss" />
+    <EntityDeploy Include="Models\ResturantDbModel.edmx">
+      <Generator>EntityModelCodeGenerator</Generator>
+      <LastGenOutput>ResturantDbModel.Designer.cs</LastGenOutput>
+    </EntityDeploy>
+    <Content Include="Models\ResturantDbModel.edmx.diagram">
+      <DependentUpon>ResturantDbModel.edmx</DependentUpon>
+    </Content>
+    <None Include="packages.config" />
+    <Content Include="Views\_ViewStart.cshtml" />
+    <Content Include="Views\Shared\_Layout.cshtml" />
+    <Content Include="Views\Home\Index.cshtml" />
+    <Content Include="Scripts\popper.js\cjs\enums.js.map" />
+    <Content Include="Scripts\popper.js\cjs\popper-base.js.map" />
+    <Content Include="Scripts\popper.js\cjs\popper-lite.js.map" />
+    <Content Include="Scripts\popper.js\cjs\popper.js.map" />
+    <Content Include="Scripts\popper.js\umd\enums.js.map" />
+    <Content Include="Scripts\popper.js\umd\enums.min.js.map" />
+    <Content Include="Scripts\popper.js\umd\popper-base.js.map" />
+    <Content Include="Scripts\popper.js\umd\popper-base.min.js.map" />
+    <Content Include="Scripts\popper.js\umd\popper-lite.js.map" />
+    <Content Include="Scripts\popper.js\umd\popper-lite.min.js.map" />
+    <Content Include="Scripts\popper.js\umd\popper.js.map" />
+    <Content Include="Scripts\popper.js\umd\popper.min.js.map" />
+    <Content Include="Scripts\twitter-bootstrap\css\bootstrap-grid.css.map" />
+    <Content Include="Scripts\twitter-bootstrap\css\bootstrap-grid.min.css.map" />
+    <Content Include="Scripts\twitter-bootstrap\css\bootstrap-grid.rtl.css.map" />
+    <Content Include="Scripts\twitter-bootstrap\css\bootstrap-grid.rtl.min.css.map" />
+    <Content Include="Scripts\twitter-bootstrap\css\bootstrap-reboot.css.map" />
+    <Content Include="Scripts\twitter-bootstrap\css\bootstrap-reboot.min.css.map" />
+    <Content Include="Scripts\twitter-bootstrap\css\bootstrap-reboot.rtl.css.map" />
+    <Content Include="Scripts\twitter-bootstrap\css\bootstrap-reboot.rtl.min.css.map" />
+    <Content Include="Scripts\twitter-bootstrap\css\bootstrap-utilities.css.map" />
+    <Content Include="Scripts\twitter-bootstrap\css\bootstrap-utilities.min.css.map" />
+    <Content Include="Scripts\twitter-bootstrap\css\bootstrap-utilities.rtl.css.map" />
+    <Content Include="Scripts\twitter-bootstrap\css\bootstrap-utilities.rtl.min.css.map" />
+    <Content Include="Scripts\twitter-bootstrap\css\bootstrap.css.map" />
+    <Content Include="Scripts\twitter-bootstrap\css\bootstrap.min.css.map" />
+    <Content Include="Scripts\twitter-bootstrap\css\bootstrap.rtl.css.map" />
+    <Content Include="Scripts\twitter-bootstrap\css\bootstrap.rtl.min.css.map" />
+    <Content Include="Scripts\twitter-bootstrap\js\bootstrap.bundle.js.map" />
+    <Content Include="Scripts\twitter-bootstrap\js\bootstrap.bundle.min.js.map" />
+    <Content Include="Scripts\twitter-bootstrap\js\bootstrap.esm.js.map" />
+    <Content Include="Scripts\twitter-bootstrap\js\bootstrap.esm.min.js.map" />
+    <Content Include="Scripts\twitter-bootstrap\js\bootstrap.js.map" />
+    <Content Include="Scripts\twitter-bootstrap\js\bootstrap.min.js.map" />
+    <Content Include="Scripts\twitter-bootstrap\scss\_accordion.scss" />
+    <Content Include="Scripts\twitter-bootstrap\scss\_alert.scss" />
+    <Content Include="Scripts\twitter-bootstrap\scss\_badge.scss" />
+    <Content Include="Scripts\twitter-bootstrap\scss\_breadcrumb.scss" />
+    <Content Include="Scripts\twitter-bootstrap\scss\_button-group.scss" />
+    <Content Include="Scripts\twitter-bootstrap\scss\_buttons.scss" />
+    <Content Include="Scripts\twitter-bootstrap\scss\_card.scss" />
+    <Content Include="Scripts\twitter-bootstrap\scss\_carousel.scss" />
+    <Content Include="Scripts\twitter-bootstrap\scss\_close.scss" />
+    <Content Include="Scripts\twitter-bootstrap\scss\_containers.scss" />
+    <Content Include="Scripts\twitter-bootstrap\scss\_dropdown.scss" />
+    <Content Include="Scripts\twitter-bootstrap\scss\_forms.scss" />
+    <Content Include="Scripts\twitter-bootstrap\scss\_functions.scss" />
+    <Content Include="Scripts\twitter-bootstrap\scss\_grid.scss" />
+    <Content Include="Scripts\twitter-bootstrap\scss\_helpers.scss" />
+    <Content Include="Scripts\twitter-bootstrap\scss\_images.scss" />
+    <Content Include="Scripts\twitter-bootstrap\scss\_list-group.scss" />
+    <Content Include="Scripts\twitter-bootstrap\scss\_maps.scss" />
+    <Content Include="Scripts\twitter-bootstrap\scss\_mixins.scss" />
+    <Content Include="Scripts\twitter-bootstrap\scss\_modal.scss" />
+    <Content Include="Scripts\twitter-bootstrap\scss\_nav.scss" />
+    <Content Include="Scripts\twitter-bootstrap\scss\_navbar.scss" />
+    <Content Include="Scripts\twitter-bootstrap\scss\_offcanvas.scss" />
+    <Content Include="Scripts\twitter-bootstrap\scss\_pagination.scss" />
+    <Content Include="Scripts\twitter-bootstrap\scss\_placeholders.scss" />
+    <Content Include="Scripts\twitter-bootstrap\scss\_popover.scss" />
+    <Content Include="Scripts\twitter-bootstrap\scss\_progress.scss" />
+    <Content Include="Scripts\twitter-bootstrap\scss\_reboot.scss" />
+    <Content Include="Scripts\twitter-bootstrap\scss\_root.scss" />
+    <Content Include="Scripts\twitter-bootstrap\scss\_spinners.scss" />
+    <Content Include="Scripts\twitter-bootstrap\scss\_tables.scss" />
+    <Content Include="Scripts\twitter-bootstrap\scss\_toasts.scss" />
+    <Content Include="Scripts\twitter-bootstrap\scss\_tooltip.scss" />
+    <Content Include="Scripts\twitter-bootstrap\scss\_transitions.scss" />
+    <Content Include="Scripts\twitter-bootstrap\scss\_type.scss" />
+    <Content Include="Scripts\twitter-bootstrap\scss\_utilities.scss" />
+    <Content Include="Scripts\twitter-bootstrap\scss\bootstrap-grid.scss" />
+    <Content Include="Scripts\twitter-bootstrap\scss\bootstrap-reboot.scss" />
+    <Content Include="Scripts\twitter-bootstrap\scss\bootstrap-utilities.scss" />
+    <Content Include="Scripts\twitter-bootstrap\scss\bootstrap.scss" />
+    <Content Include="Scripts\twitter-bootstrap\scss\forms\_floating-labels.scss" />
+    <Content Include="Scripts\twitter-bootstrap\scss\forms\_form-check.scss" />
+    <Content Include="Scripts\twitter-bootstrap\scss\forms\_form-control.scss" />
+    <Content Include="Scripts\twitter-bootstrap\scss\forms\_form-range.scss" />
+    <Content Include="Scripts\twitter-bootstrap\scss\_variables-dark.scss" />
+    <Content Include="Scripts\twitter-bootstrap\scss\_variables.scss" />
+    <Content Include="Scripts\twitter-bootstrap\scss\forms\_form-select.scss" />
+    <Content Include="Scripts\twitter-bootstrap\scss\forms\_form-text.scss" />
+    <Content Include="Scripts\twitter-bootstrap\scss\forms\_input-group.scss" />
+    <Content Include="Scripts\twitter-bootstrap\scss\forms\_labels.scss" />
+    <Content Include="Scripts\twitter-bootstrap\scss\forms\_validation.scss" />
+    <Content Include="Scripts\twitter-bootstrap\scss\helpers\_clearfix.scss" />
+    <Content Include="Scripts\twitter-bootstrap\scss\helpers\_color-bg.scss" />
+    <Content Include="Scripts\twitter-bootstrap\scss\helpers\_colored-links.scss" />
+    <Content Include="Scripts\twitter-bootstrap\scss\helpers\_focus-ring.scss" />
+    <Content Include="Scripts\twitter-bootstrap\scss\helpers\_icon-link.scss" />
+    <Content Include="Scripts\twitter-bootstrap\scss\helpers\_position.scss" />
+    <Content Include="Scripts\twitter-bootstrap\scss\helpers\_ratio.scss" />
+    <Content Include="Scripts\twitter-bootstrap\scss\helpers\_stacks.scss" />
+    <Content Include="Scripts\twitter-bootstrap\scss\helpers\_stretched-link.scss" />
+    <Content Include="Scripts\twitter-bootstrap\scss\helpers\_text-truncation.scss" />
+    <Content Include="Scripts\twitter-bootstrap\scss\helpers\_visually-hidden.scss" />
+    <Content Include="Scripts\twitter-bootstrap\scss\helpers\_vr.scss" />
+    <Content Include="Scripts\twitter-bootstrap\scss\mixins\_alert.scss" />
+    <Content Include="Scripts\twitter-bootstrap\scss\mixins\_backdrop.scss" />
+    <Content Include="Scripts\twitter-bootstrap\scss\mixins\_banner.scss" />
+    <Content Include="Scripts\twitter-bootstrap\scss\mixins\_border-radius.scss" />
+    <Content Include="Scripts\twitter-bootstrap\scss\mixins\_box-shadow.scss" />
+    <Content Include="Scripts\twitter-bootstrap\scss\mixins\_breakpoints.scss" />
+    <Content Include="Scripts\twitter-bootstrap\scss\mixins\_buttons.scss" />
+    <Content Include="Scripts\twitter-bootstrap\scss\mixins\_caret.scss" />
+    <Content Include="Scripts\twitter-bootstrap\scss\mixins\_clearfix.scss" />
+    <Content Include="Scripts\twitter-bootstrap\scss\mixins\_color-mode.scss" />
+    <Content Include="Scripts\twitter-bootstrap\scss\mixins\_color-scheme.scss" />
+    <Content Include="Scripts\twitter-bootstrap\scss\mixins\_container.scss" />
+    <Content Include="Scripts\twitter-bootstrap\scss\mixins\_deprecate.scss" />
+    <Content Include="Scripts\twitter-bootstrap\scss\mixins\_forms.scss" />
+    <Content Include="Scripts\twitter-bootstrap\scss\mixins\_gradients.scss" />
+    <Content Include="Scripts\twitter-bootstrap\scss\mixins\_grid.scss" />
+    <Content Include="Scripts\twitter-bootstrap\scss\mixins\_image.scss" />
+    <Content Include="Scripts\twitter-bootstrap\scss\mixins\_list-group.scss" />
+    <Content Include="Scripts\twitter-bootstrap\scss\mixins\_lists.scss" />
+    <Content Include="Scripts\twitter-bootstrap\scss\mixins\_pagination.scss" />
+    <Content Include="Scripts\twitter-bootstrap\scss\mixins\_reset-text.scss" />
+    <Content Include="Scripts\twitter-bootstrap\scss\mixins\_resize.scss" />
+    <Content Include="Scripts\twitter-bootstrap\scss\mixins\_table-variants.scss" />
+    <Content Include="Scripts\twitter-bootstrap\scss\mixins\_text-truncate.scss" />
+    <Content Include="Scripts\twitter-bootstrap\scss\mixins\_transition.scss" />
+    <Content Include="Scripts\twitter-bootstrap\scss\mixins\_utilities.scss" />
+    <Content Include="Scripts\twitter-bootstrap\scss\mixins\_visually-hidden.scss" />
+    <Content Include="Scripts\twitter-bootstrap\scss\utilities\_api.scss" />
+    <Content Include="Scripts\twitter-bootstrap\scss\vendor\_rfs.scss" />
+    <None Include="Web.Debug.config">
+      <DependentUpon>Web.config</DependentUpon>
+    </None>
+    <None Include="Web.Release.config">
+      <DependentUpon>Web.config</DependentUpon>
+    </None>
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="App_Data\" />
+  </ItemGroup>
+  <ItemGroup>
+    <Service Include="{508349B6-6B84-4DF5-91F0-309BEEBAD82D}" />
+  </ItemGroup>
+  <PropertyGroup>
+    <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>
+    <VSToolsPath Condition="'$(VSToolsPath)' == ''">$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v$(VisualStudioVersion)</VSToolsPath>
+  </PropertyGroup>
+  <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />
+  <Import Project="$(VSToolsPath)\WebApplications\Microsoft.WebApplication.targets" Condition="'$(VSToolsPath)' != ''" />
+  <Import Project="$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v10.0\WebApplications\Microsoft.WebApplication.targets" Condition="false" />
+  <ProjectExtensions>
+    <VisualStudio>
+      <FlavorProperties GUID="{349c5851-65df-11da-9384-00065b846f21}">
+        <WebProjectProperties>
+          <UseIIS>True</UseIIS>
+          <AutoAssignPort>True</AutoAssignPort>
+          <DevelopmentServerPort>53493</DevelopmentServerPort>
+          <DevelopmentServerVPath>/</DevelopmentServerVPath>
+          <IISUrl>https://localhost:44308/</IISUrl>
+          <NTLMAuthentication>False</NTLMAuthentication>
+          <UseCustomServer>False</UseCustomServer>
+          <CustomServerUrl>
+          </CustomServerUrl>
+          <SaveServerSettingsInUserFile>False</SaveServerSettingsInUserFile>
+        </WebProjectProperties>
+      </FlavorProperties>
+    </VisualStudio>
+  </ProjectExtensions>
+  <Target Name="EnsureNuGetPackageBuildImports" BeforeTargets="PrepareForBuild">
+    <PropertyGroup>
+      <ErrorText>This project references NuGet package(s) that are missing on this computer. Use NuGet Package Restore to download them.  For more information, see http://go.microsoft.com/fwlink/?LinkID=322105. The missing file is {0}.</ErrorText>
+    </PropertyGroup>
+    <Error Condition="!Exists('..\packages\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.2.0.1\build\net46\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.props')" Text="$([System.String]::Format('$(ErrorText)', '..\packages\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.2.0.1\build\net46\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.props'))" />
+  </Target>
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>
